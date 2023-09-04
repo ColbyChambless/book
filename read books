@@ -1,0 +1,23 @@
+import os
+
+# Define the path to the folder containing the books on the phone
+book_folder_path = "/path/to/book/folder"
+
+# Get the list of files in the book folder
+book_files = os.listdir(book_folder_path)
+
+# Display the list of available books
+print("Available books:")
+for index, book_file in enumerate(book_files):
+    print(index + 1, "-", book_file)
+
+# Prompt the user to select a book
+book_choice = int(input("Enter the number of the book you want to read: "))
+
+# Check if the book choice is valid
+if 1 <= book_choice <= len(book_files):
+    selected_book = book_files[book_choice - 1]
+    print("Opening book:", selected_book)
+    # Add your code here to read the book
+else:
+    print("Invalid book choice. Please try again.")
